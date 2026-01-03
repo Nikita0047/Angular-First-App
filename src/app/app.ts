@@ -11,6 +11,7 @@ import { RouterOutlet } from '@angular/router';
   `,
   styles: [],
 })
+//Hey there! This is the main app component
 export class App {
   protected readonly title = signal('First-App');
 }
