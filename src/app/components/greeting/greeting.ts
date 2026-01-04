@@ -10,6 +10,7 @@ import { Component , input} from '@angular/core';
   styles: ``,
 })
 //this is a child component
+// I'm also a little child.
 export class Greeting {
  message = input();// to receive data from parent component(home component)
 }
