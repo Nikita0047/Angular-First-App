@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   imports: [],
   template: `
     <h1>
-      <nav>First App In Angular</nav>
+      <nav>{{ title() }}
+        <div>{{ subtitle }}</div>
+      </nav>
     </h1>
 
   `,
@@ -17,8 +19,14 @@ import { Component } from '@angular/core';
       padding-inline: 15px;
       padding-block: 10px;
       justify-content: center;
+      }
+      nav div {
+        font-size: 10px;
+        font-weight: lighter;
+        padding-inline:3px;
       }`,
 })
 export class Header {
-
+  title  = signal('First-App In Angular');// data binding example with signal
+  subtitle = 'Learning Angular'; // example of property simple data binding
 }
