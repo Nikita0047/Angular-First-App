@@ -9,6 +9,7 @@ import { Component , input} from '@angular/core';
   `,
   styles: ``,
 })
+//this is a child component
 export class Greeting {
  message = input();// to receive data from parent component(home component)
 }
