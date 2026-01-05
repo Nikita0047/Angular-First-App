@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Todoservice } from '../../services/todos';
 
 @Component({
   selector: 'app-header',
@@ -36,6 +37,7 @@ import { RouterLink } from '@angular/router';
       padding: 5px 10px;
       font-size: 8px;
     }`,
+    //providers: [Todoservice],use this line if you want to provide service at component level+remove providedIn:'root'from service file
 })
     
 export class Header {
