@@ -1,14 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Home } from './home/home';
 import{ Header } from './components/header/header';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header ,Home], 
+  imports: [RouterOutlet, Header], 
   template: `
     <app-header></app-header>
     <main>
-    <app-home/>
+      <router-outlet></router-outlet>
     </main>
    
     
