@@ -1,12 +1,16 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { Todoservice } from '../../services/todos';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink],
   template: `
     <h1>
-      <nav>{{ title() }}
+      <nav>
+        <span routerLink="/">{{ title() }}</span>
         <div>{{ subtitle }}</div>
+        <span id = "items" style="float:right" routerLink="/Todos">Todos</span>
       </nav>
     </h1>
 
@@ -24,8 +28,18 @@ import { Component, signal } from '@angular/core';
         font-size: 10px;
         font-weight: lighter;
         padding-inline:3px;
-      }`,
+      }
+      #items{
+        display:flex;
+      justify-content: space-between;
+      cursor: pointer;
+      margin: auto 5px;
+      padding: 5px 10px;
+      font-size: 8px;
+    }`,
+    //providers: [Todoservice],use this line if you want to provide service at component level+remove providedIn:'root'from service file
 })
+    
 export class Header {
   title  = signal('First-App In Angular');// data binding example with signal
   subtitle = 'Learning Angular'; // example of property simple data binding
