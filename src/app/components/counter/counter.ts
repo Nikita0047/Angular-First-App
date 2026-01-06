@@ -9,9 +9,9 @@ import { count } from 'rxjs';
       counter: {{ counter() }}
     </p>
     <div>
-      <button (click)="Increament()">Increament</button>
+      <button (click)="Increment()">Increment</button>
       <button (click)="Reset()">Reset</button>
-      <button (click)="Decreament()">Decreament</button>
+      <button (click)="Decrement()">Decrement</button>
     </div>
   `,
   styles: `
@@ -31,11 +31,11 @@ import { count } from 'rxjs';
 })
 export class Counter {
   counter = signal(0);
-  Increament()
+  Increment()
   {
      this.counter.update(x=>x + 1);
   }
-  Decreament()
+  Decrement()
   {
     this.counter.update(x=>x- 1);
     if(this.counter() < 0)
